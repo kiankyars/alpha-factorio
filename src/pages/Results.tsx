@@ -70,7 +70,7 @@ const Results = () => {
         // Simulate API call to generate advice
         await new Promise(resolve => setTimeout(resolve, 3000));
         
-        // Mock AI-generated advice
+        // Mock LLM-generated advice
         const mockAdvice: FinancialAdvice = {
           savingsRate: {
             recommended: 22,
@@ -98,7 +98,7 @@ const Results = () => {
 
         setAdvice(mockAdvice);
         
-        // Add initial AI greeting
+        // Add initial LLM greeting
         setChatMessages([{
           id: '1',
           role: 'assistant',
@@ -164,7 +164,7 @@ const Results = () => {
             <Bot className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Analyzing Your Finances</h2>
-          <p className="text-gray-600">Our AI is creating your personalized financial plan...</p>
+          <p className="text-gray-600">Our LLM is creating your personalized financial plan...</p>
           <div className="mt-4 w-64 mx-auto bg-gray-200 rounded-full h-2">
             <div className="bg-gradient-to-r from-blue-600 to-green-600 h-2 rounded-full animate-pulse w-3/4"></div>
           </div>
@@ -185,7 +185,7 @@ const Results = () => {
               <DollarSign className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              FinanceAI
+              Clever
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -209,7 +209,7 @@ const Results = () => {
             Your Personalized Financial Plan
           </h1>
           <p className="text-xl text-gray-600">
-            AI-powered recommendations tailored to your goals and situation
+            LLM-powered recommendations tailored to your goals and situation
           </p>
         </div>
 
@@ -393,7 +393,7 @@ const Results = () => {
                     <Bot className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Financial AI Assistant</h3>
+                    <h3 className="font-semibold text-white">Financial LLM Assistant</h3>
                     <p className="text-xs text-blue-100">Ask me anything about your plan</p>
                   </div>
                 </div>

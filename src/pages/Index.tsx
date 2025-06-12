@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Shield, TrendingUp, Brain, Users, DollarSign } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Brain, Users, DollarSign, Mic, Target, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -11,8 +11,8 @@ const Index = () => {
   const features = [
     {
       icon: <Brain className="w-8 h-8 text-blue-600" />,
-      title: "AI-Powered Analysis",
-      description: "Get personalized financial advice powered by GPT-4 and fiduciary-level analysis"
+      title: "LLM-Powered Analysis",
+      description: "Get personalized financial advice powered by advanced language models and fiduciary-level analysis"
     },
     {
       icon: <Shield className="w-8 h-8 text-green-600" />,
@@ -32,6 +32,24 @@ const Index = () => {
     { number: "89%", label: "User Satisfaction" }
   ];
 
+  const premiumFeatures = [
+    {
+      icon: <Mic className="w-6 h-6 text-blue-600" />,
+      title: "Voice LLM Assistant Meetings",
+      description: "Talk with your financial assistant via voice calls - like having a personal advisor on speed dial"
+    },
+    {
+      icon: <Target className="w-6 h-6 text-red-600" />,
+      title: "Smart Spending Challenges",
+      description: "Clever spots and targets your problem spending with personalized challenges to help you save"
+    },
+    {
+      icon: <Calendar className="w-6 h-6 text-green-600" />,
+      title: "Accountability Check-ins",
+      description: "Regular check-ins to keep you on track with your financial goals and spending habits"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Header */}
@@ -42,7 +60,7 @@ const Index = () => {
               <DollarSign className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              FinanceAI
+              Clever
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -67,14 +85,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Your AI-Powered
+              Your everyday
               <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                {" "}Financial Advisor
+                {" "}financial LLM assistant
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Get personalized investment strategies, debt payoff plans, and tax optimization tips 
-              in minutes. Powered by AI, backed by fiduciary-level financial expertise.
+              in minutes. Powered by advanced language models, backed by fiduciary-level financial expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
@@ -112,10 +130,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose FinanceAI?
+              Why Choose Clever?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Traditional financial advisors charge 1% annually. Our AI gives you the same quality advice 
+              Traditional financial advisors charge 1% annually. Our LLM gives you the same quality advice 
               for a fraction of the cost, available 24/7.
             </p>
           </div>
@@ -137,6 +155,100 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="px-6 py-20 bg-white/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              World's Most Affordable LLM Financial Assistant
+            </h2>
+            <p className="text-xl text-gray-600">
+              Start free, upgrade when you need more
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Free Plan */}
+            <Card className="p-8 border-2 border-gray-200 bg-white">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Free</h3>
+                <div className="text-4xl font-bold text-gray-900 mb-2">$0</div>
+                <p className="text-gray-600">Forever free</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center">
+                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span>Personalized financial analysis</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span>Investment recommendations</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-xs">✓</span>
+                  </div>
+                  <span>Chat support during session</span>
+                </li>
+              </ul>
+              <Button 
+                onClick={() => navigate("/onboard")}
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white"
+              >
+                Get Started Free
+              </Button>
+            </Card>
+
+            {/* Premium Plan */}
+            <Card className="p-8 border-2 border-blue-500 bg-gradient-to-br from-blue-50 to-green-50 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  Most Popular
+                </span>
+              </div>
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Clever Plus</h3>
+                <div className="text-4xl font-bold text-gray-900 mb-2">$4.99</div>
+                <p className="text-gray-600">per month</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <Mic className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Voice LLM Assistant Meetings</span>
+                    <p className="text-sm text-gray-600">Talk with your financial assistant via voice calls</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Target className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Smart Spending Challenges</span>
+                    <p className="text-sm text-gray-600">Clever spots and targets your problem spending</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Calendar className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span className="font-medium">Accountability Check-ins</span>
+                    <p className="text-sm text-gray-600">Regular check-ins to keep you on track</p>
+                  </div>
+                </li>
+              </ul>
+              <Button 
+                onClick={() => navigate("/onboard")}
+                className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white"
+              >
+                Start Free Trial
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-6 py-20 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="max-w-4xl mx-auto text-center text-white">
@@ -144,7 +256,7 @@ const Index = () => {
             Ready to optimize your finances?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Join thousands who have already improved their financial future with AI-powered advice.
+            Join thousands who have already improved their financial future with LLM-powered advice.
           </p>
           <Button 
             onClick={() => navigate("/onboard")}
@@ -159,20 +271,30 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-6 py-12 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center">
-              <DollarSign className="w-5 h-5 text-white" />
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold">Clever</span>
             </div>
-            <span className="text-xl font-bold">FinanceAI</span>
+            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+              LLM-powered financial guidance that helps you make smarter money decisions. Get personalized help on savings, investments, and debt management.
+            </p>
           </div>
-          <p className="text-gray-400 mb-6">
-            AI-powered financial advice for everyone
-          </p>
-          <div className="flex justify-center space-x-8 text-sm text-gray-400">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Contact Us</span>
+          
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-sm text-gray-400">
+                © 2025 Clever LLM. All rights reserved.
+              </div>
+              <div className="flex space-x-8 text-sm text-gray-400">
+                <span className="hover:text-white cursor-pointer">Privacy Policy</span>
+                <span className="hover:text-white cursor-pointer">Terms of Service</span>
+                <span className="hover:text-white cursor-pointer">Contact Us</span>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
