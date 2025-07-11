@@ -2,7 +2,7 @@ import os
 import requests
 
 API_KEY = "AIzaSyCkc7avbrni4SXu22l5DkQ8ww3ETV0oEzg"
-ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + API_KEY
+ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY
 
 with open("first_1000.txt") as f:
     lines = [l.strip() for l in f.readlines()[:1000]]
@@ -16,8 +16,8 @@ for idx, chunk in enumerate(chunks):
     r = requests.post(ENDPOINT, json=data)
     try:
         summary = r.json()["candidates"][0]["content"]["parts"][0]["text"]
-    except Exception:
-        summary = "[Error or empty response]"
+    except Exception as e:
+        print(e)
     summaries.append(f"Chunk {idx+1}: {summary}")
 
 with open("factorio_mvp_trace.txt", "w") as out:
