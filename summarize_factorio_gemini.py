@@ -1,7 +1,6 @@
 import os
 import requests
 
-API_KEY = "AIzaSyCkc7avbrni4SXu22l5DkQ8ww3ETV0oEzg"
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY
 
 with open("first_1000.txt") as f:
